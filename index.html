@@ -1,0 +1,130 @@
+<!DOCTYPE html lang="ar">
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blod-donor</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="crudtable ">
+<div class="leyer">
+   <div class="head">
+    <h2 class="text-light text-center mt-4 fs-3">مـرحـبا بـكـم</h2>
+    <h6 class="text-center crudText mt-2 fs-5">هذا الموقع يخدم المحتاجين لمتبرعين بالدم من خلال مجموعه متطوعين  <br> كل ماعليك فعله هو اختيار فصيلة الدم التي تحتاجها وسيظهر اسماء المتطوعين المطابقين لنفس الفصيله</h6>
+   </div>
+  <div class="addDonor " id="add" dir="rtl">
+<div class="row">
+    
+        <div class="col-lg-12 text-dark">
+
+            <h5 class="text-center pb-4 fs-3">اضــــافة مـــتـبـرع</h5>
+     
+        <div class="m-auto flex text-center">
+            <input id="addName" type="text "class="text form-control  w-100 m-auto " placeholder="الأسم" required minlength="3" maxlength="30"><br>
+           <input id="addPhone" type="tel" class="form-control  w-100 m-auto " placeholder="رقم الموبايل" required minlength="11"><br>
+           <input id="addBloodType" type="text"class="form-control mb-4 w-100 m-auto"  placeholder="فصيلة الدم" required minlength="2" maxlength="3">
+           </div>
+          
+           <button  class="btn btn-primary w-25 m-3 fs-5 mb-4" onclick="addDonor()">أضافة</button>
+           <button class="btn btn-primary w-25 m-3 fs-5  mb-4" onclick="cancel()">الغاء</button>
+       
+            
+        </div>
+    
+</div>
+  </div>
+<div id="crud" class=" text-dark " >
+
+   <div class="w-75 table text-center mt-4 w-75 m-auto text-light flex" >
+    <select id="selectValue" onchange="select(this.value)"  class=" w-50  w-75 m-auto text-center form-select">
+        <option  >اختر فصيلة الدم</option>
+            <option value="o+" >O+</option>
+            <option value="o-">O-</option>
+            <option value="b+">B+</option>
+            <option value="b-">B-</option>
+            <option value="ab+">AB+</option>
+            <option value="ab-">AB-</option>
+            <option value="a+">A+</option>
+            <option value="a-">A-</option>
+    </select>
+    <button class="btn btn-success w-50 mt-4 fs-5  mb-2" onclick="add()">اضــافة مـتـبـرع</button>
+   </div>
+   <div id="notMatch" class="notMatch w-75 col-sm-12 m-auto table text-light text-center mt-2 p-2">
+    
+   </div>
+
+    <table class=" text-center table  mt-2 w-75 col-sm-12 m-auto" id="table">
+       <thead  id="headers" class="bg-success text-light">
+            <tr>
+                <th>
+                    فصيلة الدم
+                </th>
+                <th>
+                    رقم الموبايل
+                </th>
+              
+                <th>
+                الأســم
+                </th>
+               
+            </tr>
+         </thead>
+    
+    <tbody id="tbody" class="text-light ">
+       
+     
+        
+    </tbody>
+    
+    </table>
+</div>
+<div class="continer pt-2 ">
+    <div class="row g-2 p-2 ">
+        
+        <div class="col-lg-4 parag text-light">
+            <h5 class="text-center "><b>شروط التبرع بالدم</b></h5>
+            <p dir="rtl" class="paragText" >
+                أن يكون المتبرع بصحة جيدة
+               ولا يعاني أي أمراض معدية.
+                <br>أن يكون عمر المتبرع من 18-65 سنة.
+                <br>يجب أن لا يقل وزن المتبرع عن 50 كجم.
+                <br>أن تكون نسبة الهيموجلوبين للرجال من 14- 17 جم، وللنساء من 12-14 جم.
+              <br>  أن يكون النبض بين 50-100 في الدقيقة.
+                أن لا تزيد درجة الحرارة عن 37 درجة مئوية.</p>
+        </div>
+        <div class="col-lg-4 parag  text-light">
+            <h5 class="text-center"><b>فوائد التبرع بالدم</b></h5>
+            <p dir="rtl" class="paragText"> الوقاية من خطر الإصابة بأمراض القلب <br>
+                تجديد كرات الدم الحمراء<br>
+                تحسين تدفق الدم<br>
+                تقليل مخزون الحديد الضار<br>
+                تقليل مخاطر الإصابة بالسرطان
+            </p>
+        </div>
+        <div class="col-lg-4  parag  text-light">
+            <h5 class="text-center"><b>   نسب فصائل الدم علي مستوى العالم </b></h5>
+    <div  class="fsa2l row p-2 ">
+        <div class="col-6 paragText">
+            <p>( O+ )  37.4 %</p>
+            <p>( O- ) 6.6 %</p>
+            <p>( A+ ) 35.7 %</p>
+            <p>( A- ) 6.3 %</p>
+          </div>
+          <div class="col-6 paragText">
+            <p>( B- ) 1.5 %</p>
+            <p>( B+ ) 8.5 %</p>
+            <p>( AB+ ) 3.4 %</p>
+            <p>( AB- ) 0.6 %</p>
+          </div>
+    </div>
+        </div>
+        
+    </div>
+</div>
+</div>
+
+    <script src="js/javascript.js"></script>
+</body>
+</html>

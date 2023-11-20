@@ -1,0 +1,91 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.crudtable{
+    background-image: url(../img/aaaa.jpeg);
+    background-size: 100% 100%;
+    background-position: center ;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.leyer {
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+}
+.crudText{
+    color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+
+#table{
+    background-color: rgba(0, 0, 0, 0.727);
+    padding-bottom: 10px;
+    visibility: visible;
+}
+.paragText{
+    font-size: 0.90rem;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+.parag{
+    background-color:rgba(0, 0, 0, 0.079);
+    border-radius: 25px;
+  text-align: center;
+   padding: 10px;
+   padding-bottom: 0;
+
+}
+
+.continer{
+    width: 90%;
+    margin: auto;
+  
+}
+.fsa2l{
+    display: flex;
+  
+}
+h5{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 1.25rem;
+}
+.addDonor{
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    padding: 30px;
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    visibility: hidden;
+    transition: 0.1s 0.1s;
+}
+.notMatch{
+    background-color: rgba(0, 0, 0, 0.558);
+    padding-bottom: 10px;
+    display: none;
+}
