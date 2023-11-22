@@ -76,9 +76,8 @@ h5{
 .addDonor{
     position: absolute;
     top: 15%;
-    right: 15%;
     padding: 30px;
-    width: 70%;
+    width: 100%;
     background-color: rgb(255, 255, 255);
     border-radius: 25px;
     visibility: hidden;
