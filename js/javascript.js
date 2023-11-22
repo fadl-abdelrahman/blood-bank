@@ -89,7 +89,7 @@ function ApiCrud(endPoint, body) {
                 addSuccess()
             }
                  else if (data.messaga == "exist") {
-                alert("المتطوع موجود بالفعل")
+                alert("المتبرع موجود بالفعل")
             }
             else {
                 alert("بــرجاء ادخال البيانات بشكل صحيح")
