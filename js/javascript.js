@@ -5,7 +5,7 @@
 var users = []
 document.getElementById("table").style.visibility = "hidden"
 
-setInterval(() => {
+
     fetch('https://donor-tq9e.onrender.com/donors')
     .then(response => response.json())
     .then(data => {
@@ -13,7 +13,7 @@ setInterval(() => {
             users = data.users
         }
     });
-}, 10000);
+
 
 
 function select(term) {
