@@ -88,7 +88,7 @@ function ApiCrud(endPoint, body) {
                 cancel()
                 addSuccess()
             }
-                 else if (data.messaga == "exist") {
+                 if (data.messaga == "exist") {
                 alert("المتبرع موجود بالفعل")
             }
             else {
