@@ -7,13 +7,15 @@ document.getElementById("table").style.visibility = "hidden"
 
 
 
-fetch('https://donor-tq9e.onrender.com/donors')
+function fetchData() {
+    fetch('https://donor-tq9e.onrender.com/donors')
     .then(response => response.json())
     .then(data => {
         if (data.messaga == "sucsess") {
-            users = data.users
-        }
+            users = data.users}
     });
+}
+setInterval (fetchData,2000)
 
 
 function select(term) {
