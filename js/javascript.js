@@ -24,7 +24,7 @@ function select(term) {
         if (users[i].bloodType.toLowerCase() == term) {
             usersRow += `<tr>
             <td>${users[i].bloodType}</td>
-            <td><a href="">${users[i].phone}</a></td>
+            <td><a href="tel:${users[i].phone}">${users[i].phone}</a></td>
             <td>${users[i].name}</td>
            
          </tr>`
