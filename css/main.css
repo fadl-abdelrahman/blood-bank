@@ -51,7 +51,7 @@ a{
     justify-content: space-around;
 }
 .parag{
-    background-color:rgba(0, 0, 0, 0.079);
+        background-color:rgba(0, 0, 0, 0.326);
     border-radius: 25px;
   text-align: center;
    padding: 10px;
@@ -88,6 +88,4 @@ h5{
     padding-bottom: 10px;
     display: none;
 }
-.addBtn{
-    display: none;
-}
+
