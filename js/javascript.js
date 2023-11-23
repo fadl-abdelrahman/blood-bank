@@ -6,14 +6,14 @@ var users = []
 document.getElementById("table").style.visibility = "hidden"
 
 
-    fetch('https://donor-tq9e.onrender.com/donors')
+
+fetch('https://donor-tq9e.onrender.com/donors')
     .then(response => response.json())
     .then(data => {
         if (data.messaga == "sucsess") {
             users = data.users
         }
     });
-
 
 
 function select(term) {
@@ -36,7 +36,7 @@ function select(term) {
             if (term == "اختر فصيلة الدم")
                 document.getElementById("notMatch").style.display = "none";
         }
-        document.getElementById("notMatch").innerHTML = ` <h4>( ${term} )  لا يوجد متبرعين لديهم فصيله دم    </h4>`
+        document.getElementById("notMatch").innerHTML = ` <h4>( ${term} )  لايوجد متبرعين لدى فصيلة    </h4>`
     }
 }
 
@@ -52,7 +52,7 @@ function cancel() {
 
 function addSuccess() {
 
-    alert("تـم تـسـجيـل الـمـتبرع بنجـاح")
+    alert(" تـم تـسـجيـل الـمـتبرع بنجـاح")
 
 }
 
@@ -88,10 +88,10 @@ function ApiCrud(endPoint, body) {
                 cancel()
                 addSuccess()
             }
-            }
             else {
-              alert(" بــرجاء ادخال البيانات بشكل صحيح او التأكد من ان المتبرع غير مسجل من قبل")
-            }
+                alert(" بــرجاء ادخال البيانات بشكل صحيح او التأكد من ان المتبرع غير مسجل من قبل")
+           
+                 }
         });
 
 }
@@ -101,5 +101,8 @@ function clear() {
     document.getElementById("addPhone").value = ""
     document.getElementById("addBloodType").value = ""
 }
+
+
+
 
 
