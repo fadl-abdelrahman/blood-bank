@@ -88,8 +88,6 @@ function ApiCrud(endPoint, body) {
                 cancel()
                 addSuccess()
             }
-                 if (data.messaga == "exist") {
-                alert("المتبرع موجود بالفعل")
             }
             else {
               alert(" بــرجاء ادخال البيانات بشكل صحيح او التأكد من ان المتبرع غير مسجل من قبل")
