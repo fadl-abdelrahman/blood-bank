@@ -21,7 +21,7 @@ setInterval (fetchData,2000)
 function select(term) {
     var usersRow = ""
     for (i = 0; i < users.length; i++) {
-        if (users[i].bloodType.toLowerCase() == term) {
+        if (users[i].bloodType.toLowerCase() == term && users[i].isActive==true) {
             usersRow += `<tr>
             <td>${users[i].bloodType}</td>
             <td><a href="tel:${users[i].phone}"> أتصال <i><span>&#9742;</span></i> </a></td>
