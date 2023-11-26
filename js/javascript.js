@@ -56,7 +56,16 @@ function getAlldonors() {
         document.getElementById("adminBtn").style.display = "none"
     document.getElementById("logout").style.display = "block"
 
-
+    oPositive = users.filter(X=>X.bloodType=="O+")
+    onigative = users.filter(X=>X.bloodType=="O-")
+    bPositive = users.filter(X=>X.bloodType=="B+")
+    bnigative = users.filter(X=>X.bloodType=="B-")
+    aPositive = users.filter(X=>X.bloodType=="A+")
+    anigative = users.filter(X=>X.bloodType=="A-")
+    abPositive = users.filter(X=>X.bloodType=="AB+")
+    abnigative = users.filter(X=>X.bloodType=="AB-")
+     userLength = users.length
+    
     var usersRow = ""
     for (i = 0; i < users.length; i++) {
         usersRow +=
@@ -71,6 +80,22 @@ function getAlldonors() {
         document.getElementById("table").style.visibility = "visible"
         document.getElementById("headers").style.display = "none"
         document.getElementById("tbody").innerHTML = usersRow
+
+           document.getElementById("filter").innerHTML = ` 
+      
+        <tr>
+        <td> <div class="bloods "> <h6">(-O) ${onigative.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(+O) ${oPositive.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(-A) ${anigative.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(+A) ${aPositive.length}</h6></div></td>
+        </tr>
+        <tr>
+        <td> <div class="bloods "> <h6">(+B) ${bnigative.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(-B) ${bPositive.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(-AB) ${abnigative.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
+        </tr>`
+        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين 100</h5>`
 
     }
 
@@ -181,6 +206,21 @@ function search(term) {
         }
 
         document.getElementById("tbody").innerHTML = usersRow
+            document.getElementById("filter").innerHTML = ` 
+      
+        <tr>
+        <td> <div class="bloods "> <h6">(-O) ${onigative.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(+O) ${oPositive.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(-A) ${anigative.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(+A) ${aPositive.length}</h6></div></td>
+        </tr>
+        <tr>
+        <td> <div class="bloods "> <h6">(+B) ${bnigative.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(-B) ${bPositive.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(-AB) ${abnigative.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
+        </tr>`
+        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين 100</h5>`
     }
 
 
