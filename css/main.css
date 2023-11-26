@@ -13,6 +13,10 @@ a{
 .adminCode{
     width: 25%;
 }
+.editeBtn{
+    background-color: rgb(255, 98, 98);
+ color: rgb(233, 233, 233);
+}
 .adminBtn{
     width: 20%;
 }
