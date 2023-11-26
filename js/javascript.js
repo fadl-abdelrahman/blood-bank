@@ -60,7 +60,7 @@ function getAlldonors() {
         <td><button   class="btn btn-danger">حذف</button></td>
         <td><button class="btn btn-primary">تعديل</button></td>
         <td>${users[i].bloodType}</td>
-        <td><a href="tel:${users[i].phone}"> ${users[i].phone} </a></td>
+        <td><a href="tel:${users[i].phone}"> &#9742;</a></td>
         <td>${users[i].name}</td>
       
      </tr>`
