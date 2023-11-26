@@ -110,7 +110,7 @@ function adminLogin() {
     let body = {
         code: adminCode
     }
-    fetch("https://donor-tq9e.onrender.com/donors", {
+    fetch("https://donor-tq9e.onrender.com/donors/admins", {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
