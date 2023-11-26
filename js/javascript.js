@@ -90,12 +90,12 @@ function getAlldonors() {
         <td> <div class="bloods "> <h6">(+A) ${aPositive.length}</h6></div></td>
         </tr>
         <tr>
-        <td> <div class="bloods "> <h6">(+B) ${bnigative.length}</h6></div></td>
-        <td><div class="bloods "> <h6">(-B) ${bPositive.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(-B) ${bnigative.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(+B) ${bPositive.length}</h6></div></td>
         <td><div class="bloods "> <h6">(-AB) ${abnigative.length}</h6></div></td>
         <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
         </tr>`
-        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين 100</h5>`
+        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>`
 
     }
 
