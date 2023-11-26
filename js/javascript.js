@@ -52,7 +52,8 @@ function getAlldonors() {
     document.getElementById("addDonorBtn").style.display = "none"
     document.getElementById("selectValue").style.display = "none"
     document.getElementById("searchInput").style.display = "block"
-     document.getElementById("adminCode").style.display = "none"
+    document.getElementById("adminCode").style.display = "none"
+        document.getElementById("adminBtn").style.display = "none"
     document.getElementById("logout").style.display = "block"
 
 
