@@ -55,6 +55,9 @@ function getAlldonors() {
     document.getElementById("adminCode").style.display = "none"
         document.getElementById("adminBtn").style.display = "none"
     document.getElementById("logout").style.display = "block"
+    document.getElementById("parag").style.display = "none"
+
+    
 
     oPositive = users.filter(X=>X.bloodType=="O+")
     onigative = users.filter(X=>X.bloodType=="O-")
@@ -65,6 +68,7 @@ function getAlldonors() {
     abPositive = users.filter(X=>X.bloodType=="AB+")
     abnigative = users.filter(X=>X.bloodType=="AB-")
      userLength = users.length
+     anactive = users.filter(x=>x.isActive==false)
     
     var usersRow = ""
     for (i = 0; i < users.length; i++) {
@@ -95,7 +99,9 @@ function getAlldonors() {
         <td><div class="bloods "> <h6">(-AB) ${abnigative.length}</h6></div></td>
         <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
         </tr>`
-        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>`
+        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>
+                document.getElementById("anactive").innerHTML=`<h5> غير مفعل ${anactive.length}</h5>`
+
 
     }
 
@@ -220,7 +226,10 @@ function search(term) {
         <td><div class="bloods "> <h6">(-AB) ${abnigative.length}</h6></div></td>
         <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
         </tr>`
-        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>`
+        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>
+       document.getElementById("anactive").innerHTML=`<h5> غير مفعل ${anactive.length}</h5>`
+
+        `
     }
 
 
