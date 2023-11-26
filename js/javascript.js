@@ -5,6 +5,7 @@
 var users = []
 document.getElementById("table").style.visibility = "hidden"
 document.getElementById("searchInput").style.display = "none"
+document.getElementById("logout").style.display = "none"
 
 
 
@@ -51,6 +52,9 @@ function getAlldonors() {
     document.getElementById("addDonorBtn").style.display = "none"
     document.getElementById("selectValue").style.display = "none"
     document.getElementById("searchInput").style.display = "block"
+     document.getElementById("adminCode").style.display = "none"
+    document.getElementById("logout").style.display = "block"
+
 
     var usersRow = ""
     for (i = 0; i < users.length; i++) {
@@ -71,6 +75,10 @@ function getAlldonors() {
     }
 
 }
+function logout(){
+    window.location.reload()
+}
+
 function select(term) {
     var usersRow = ""
     for (i = 0; i < users.length; i++) {
@@ -167,7 +175,7 @@ function search(term) {
             <td><button  class="btn btn-danger">حذف</button></td>
             <td><button class="btn btn-primary">تعديل</button></td>
             <td>${users[i].bloodType}</td>
-            <td><a href="tel:${users[i].phone}"> ${users[i].phone} </a></td>
+            <td><a href="tel:${users[i].phone}"> &#9742; </a></td>
             <td>${users[i].name}</td>
 </tr>`
         }
