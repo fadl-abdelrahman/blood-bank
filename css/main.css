@@ -10,6 +10,12 @@ a{
     color: white;
 
 }
+.adminCode{
+    width: 20%;
+}
+.adminBtn{
+    width: 15%;
+}
 
 .crudtable{
     background-image: url(../img/aaaa.jpeg);
