@@ -14,14 +14,16 @@
        <div class="d-flex p-2 col-lg-6  ">
  <input id="adminCode" type="password" class="adminCode form-control ms-2" type="text" placeholder="ADMIN">
 <button id="adminBtn" class="adminBtn btn btn-success" onclick="adminLogin()">LOGIN</button>
- <button id="logout" class="adminBtn btn btn-success" onclick="logout()" >Logout</button>
+ <button id="logout" class="adminBtn btn btn-success p-1" onclick="logout()" >Logout</button>
 </div>
       <h1 class="text-light text-center crudText  fs-1"> بنك الدم النوبي بالسويس</h1>
     <h2 class="text-light text-center mt-2 fs-3">يرحب بـكـم</h2>
     <h6 class="text-center crudText text-light mt-2 fs-7">هذا الموقع يخدم المحتاجين لمتبرعين بالدم من خلال مجموعة متطوعين  <br> كل ماعليك فعله هو اختيار فصيلة الدم التي تحتاجها وسيظهر اسماء المتطوعين المطابقين لنفس الفصيله</h6>
-      <input type="search" placeholder="بحث" onkeyup="search(this.value)" id="searchInput" class="form-control m-auto w-50" dir="rtl" >
+      <input type="search" placeholder="بحث" onkeyup="search(this.value)" id="searchInput" class="form-control m-auto col-lg-6" dir="rtl" >
 <table dir="rtl" class=" col-lg-9 table text-center m-auto mt-2" id="filter" ></table>
-<div class="mt-2 col-lg-9 text-center text-light bg-success m-auto" id="total"></div>
+<div class="mt-2 col-lg-4 text-center text-light bg-success m-auto" id="total"></div>
+ <div class="mt-2 col-lg-4 text-center text-dark bg-warning m-auto" id="anactive"></div>
+
    </div>
   <div class="addDonor " id="add" dir="rtl">
 <div class="row">
