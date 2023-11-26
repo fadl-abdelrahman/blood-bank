@@ -34,7 +34,6 @@ function adminLogin() {
         .then(response => response.json())
         .then(data => {
             if (data.messaga == "sucsess") {
-                alert("WELCOME")
                 getAlldonors()
             }
             else {
@@ -99,7 +98,7 @@ function getAlldonors() {
         <td><div class="bloods "> <h6">(-AB) ${abnigative.length}</h6></div></td>
         <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
         </tr>`
-        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>
+        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>`
                 document.getElementById("anactive").innerHTML=`<h5> غير مفعل ${anactive.length}</h5>`
 
 
@@ -226,7 +225,7 @@ function search(term) {
         <td><div class="bloods "> <h6">(-AB) ${abnigative.length}</h6></div></td>
         <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
         </tr>`
-        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>
+        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>`
        document.getElementById("anactive").innerHTML=`<h5> غير مفعل ${anactive.length}</h5>`
 
         `
