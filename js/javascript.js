@@ -104,7 +104,82 @@ function clear() {
     document.getElementById("addBloodType").value = ""
 }
 
+function adminLogin() {
+    let adminCode = document.getElementById("adminCode").value
+    let body = {
+        code: adminCode
+    }
+    fetch("https://donor-tq9e.onrender.com/donors", {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.messaga == "sucsess") {
+                alert("WELCOME")
+                getAlldonors()
+            }
+            else {
+                alert("ERROR ADMIN CODE")
+            }
+        });
 
+
+    document.getElementById("adminCode").value = ""
+
+
+}
+
+function getAlldonors() {
+    document.getElementById("addDonorBtn").style.display = "none"
+    document.getElementById("selectValue").style.display = "none"
+    document.getElementById("searchInput").style.display = "block"
+
+    var usersRow = ""
+    for (i = 0; i < users.length; i++) {
+        usersRow +=
+            `<tr class="p-2">
+            <td>${users[i].isActive}</td>
+        <td><button   class="btn btn-danger">حذف</button></td>
+        <td><button class="btn btn-primary">تعديل</button></td>
+        <td>${users[i].bloodType}</td>
+        <td><a href="tel:${users[i].phone}"> ${users[i].phone} </a></td>
+        <td>${users[i].name}</td>
+      
+     </tr>`
+        document.getElementById("table").style.visibility = "visible"
+        document.getElementById("headers").style.display = "none"
+        document.getElementById("tbody").innerHTML = usersRow
+
+    }
+
+}
+
+
+function search(term) {
+
+    var usersRow = "";
+
+    for (i = 0; i < users.length; i++) {
+
+        if (users[i].name.toLowerCase().indexOf(term) == 0) {
+            usersRow += ` <tr>
+            <td><button  class="btn btn-danger">حذف</button></td>
+            <td><button class="btn btn-primary">تعديل</button></td>
+            <td>${users[i].bloodType}</td>
+            <td><a href="tel:${users[i].phone}"> ${users[i].phone} </a></td>
+            <td>${users[i].name}</td>
+</tr>`
+        }
+
+        document.getElementById("tbody").innerHTML = usersRow
+    }
+
+
+}
 
 
 
