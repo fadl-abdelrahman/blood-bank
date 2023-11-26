@@ -18,7 +18,59 @@ function fetchData() {
 }
 setInterval (fetchData,2000)
 
+function adminLogin() {
+    let adminCode = document.getElementById("adminCode").value
+    let body = {
+        code: adminCode
+    }
+    fetch("https://donor-tq9e.onrender.com/donors/admins", {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.messaga == "sucsess") {
+                alert("WELCOME")
+                getAlldonors()
+            }
+            else {
+                alert("ERROR ADMIN CODE")
+            }
+        });
 
+
+    document.getElementById("adminCode").value = ""
+
+
+}
+
+function getAlldonors() {
+    document.getElementById("addDonorBtn").style.display = "none"
+    document.getElementById("selectValue").style.display = "none"
+    document.getElementById("searchInput").style.display = "block"
+
+    var usersRow = ""
+    for (i = 0; i < users.length; i++) {
+        usersRow +=
+            `<tr class="p-2">
+            <td>${users[i].isActive}</td>
+        <td><button   class="btn btn-danger">حذف</button></td>
+        <td><button class="btn btn-primary">تعديل</button></td>
+        <td>${users[i].bloodType}</td>
+        <td><a href="tel:${users[i].phone}"> ${users[i].phone} </a></td>
+        <td>${users[i].name}</td>
+      
+     </tr>`
+        document.getElementById("table").style.visibility = "visible"
+        document.getElementById("headers").style.display = "none"
+        document.getElementById("tbody").innerHTML = usersRow
+
+    }
+
+}
 function select(term) {
     var usersRow = ""
     for (i = 0; i < users.length; i++) {
@@ -104,61 +156,6 @@ function clear() {
     document.getElementById("addPhone").value = ""
     document.getElementById("addBloodType").value = ""
 }
-
-function getAlldonors() {
-    document.getElementById("addDonorBtn").style.display = "none"
-    document.getElementById("selectValue").style.display = "none"
-    document.getElementById("searchInput").style.display = "block"
-
-    var usersRow = ""
-    for (i = 0; i < users.length; i++) {
-        usersRow +=
-            `<tr class="p-2">
-            <td>${users[i].isActive}</td>
-        <td><button   class="btn btn-danger">حذف</button></td>
-        <td><button class="btn btn-primary">تعديل</button></td>
-        <td>${users[i].bloodType}</td>
-        <td><a href="tel:${users[i].phone}"> ${users[i].phone} </a></td>
-        <td>${users[i].name}</td>
-      
-     </tr>`
-        document.getElementById("table").style.visibility = "visible"
-        document.getElementById("headers").style.display = "none"
-        document.getElementById("tbody").innerHTML = usersRow
-
-    }
-
-}
-
-
-function adminLogin() {
-    let adminCode = document.getElementById("adminCode").value
-    let body = {
-        code: adminCode
-    }
-    fetch("https://donor-tq9e.onrender.com/donors/admins", {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.messaga == "sucsess") {
-                alert("WELCOME")
-                getAlldonors()
-            }
-            else {
-                alert("ERROR ADMIN CODE")
-            }
-        });
-    document.getElementById("adminCode").value = ""
-}
-
-
-
-
 function search(term) {
 
     var usersRow = "";
