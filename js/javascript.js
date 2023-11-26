@@ -4,6 +4,7 @@
 
 var users = []
 document.getElementById("table").style.visibility = "hidden"
+document.getElementById("searchInput").style.display = "none"
 
 
 
