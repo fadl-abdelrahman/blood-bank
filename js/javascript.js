@@ -105,35 +105,6 @@ function clear() {
     document.getElementById("addBloodType").value = ""
 }
 
-function adminLogin() {
-    let adminCode = document.getElementById("adminCode").value
-    let body = {
-        code: adminCode
-    }
-    fetch("https://donor-tq9e.onrender.com/donors/admins", {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.messaga == "sucsess") {
-                alert("WELCOME")
-                getAlldonors()
-            }
-            else {
-                alert("ERROR ADMIN CODE")
-            }
-        });
-
-
-    document.getElementById("adminCode").value = ""
-
-
-}
-
 function getAlldonors() {
     document.getElementById("addDonorBtn").style.display = "none"
     document.getElementById("selectValue").style.display = "none"
@@ -158,6 +129,34 @@ function getAlldonors() {
     }
 
 }
+
+
+function adminLogin() {
+    let adminCode = document.getElementById("adminCode").value
+    let body = {
+        code: adminCode
+    }
+    fetch("https://donor-tq9e.onrender.com/donors/admins", {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.messaga == "sucsess") {
+                alert("WELCOME")
+                getAlldonors()
+            }
+            else {
+                alert("ERROR ADMIN CODE")
+            }
+        });
+    document.getElementById("adminCode").value = ""
+}
+
+
 
 
 function search(term) {
