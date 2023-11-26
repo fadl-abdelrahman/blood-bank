@@ -228,7 +228,7 @@ function search(term) {
         document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>`
        document.getElementById("anactive").innerHTML=`<h5> غير مفعل ${anactive.length}</h5>`
 
-        `
+        
     }
 
 
