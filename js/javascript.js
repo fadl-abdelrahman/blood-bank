@@ -75,7 +75,7 @@ function getAlldonors() {
     for (i = 0; i < users.length; i++) {
         usersRow +=
             `<tr class="p-2">
-          <td><button class="btn btn-Warning text-light">تعديل</button></td>
+          <td><button class="btn btn-primary text-light">تعديل</button></td>
                  <td>${users[i].isActive}</td>
         <td>${users[i].bloodType}</td>
         <td><a href="tel:${users[i].phone}"><i class="text-primary"><span>&#128222;</span></i> </a></td>
@@ -117,7 +117,7 @@ function select(term) {
         if (users[i].bloodType.toLowerCase() == term && users[i].isActive==true) {
             usersRow += `<tr>
             <td>${users[i].bloodType}</td>
-            <td><a href="tel:${users[i].phone}"> أتصال <i class="text-primary"><span>&#128222;</span></i>  </a></td>
+            <td><i class="text-primary"><span>&#128222;</span></i> <a href="tel:${users[i].phone}"> أتصال  </a></td>
             <td>${users[i].name}</td>
            
          </tr>`
@@ -204,7 +204,7 @@ function search(term) {
 
         if (users[i].name.toLowerCase().indexOf(term) == 0) {
             usersRow += ` <tr>
-            <td><button class="btn btn-Warning text-light">تعديل</button></td>
+            <td><button class="btn btn-primary text-light">تعديل</button></td>
             <td>${users[i].isActive}</td>
             <td>${users[i].bloodType}</td>
             <td><a href="tel:${users[i].phone}"><i class="text-primary"><span>&#128222;</span></i> </a></td>
