@@ -17,6 +17,17 @@ border-radius: 10px;
 margin-top: 20px;
 
 }
+.updateDonor{
+    position: sticky;
+    top: 5%;
+    padding: 30px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    display: none;
+    transition: 0.1s 0.1s;
+    
+}
 .bloods{
     background-color: rgba(0, 0, 0, 0.474);
     padding: 5px;
