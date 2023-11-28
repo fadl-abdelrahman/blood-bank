@@ -19,6 +19,7 @@ margin-top: 20px;
 }
 .updateDonor{
     position: sticky;
+    top: 0;
     padding: 30px;
     width: 100%;
     background-color: rgb(255, 255, 255);
