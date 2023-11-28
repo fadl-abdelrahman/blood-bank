@@ -112,7 +112,7 @@ function logout(){
 function select(term) {
     var usersRow = ""
     for (i = 0; i < users.length; i++) {
-        if (users[i].bloodType.toLowerCase() == term && users[i].isActive==true) {
+        if (users[i].bloodType.toLowerCase() == term ) {
             usersRow += `<tr>
             <td>${users[i].bloodType}</td>
             <td><i class="text-primary"><span>&#128222;</span></i> <a href="tel:${users[i].phone}"> أتصال  </a></td>
