@@ -69,14 +69,12 @@ function getAlldonors() {
     abPositive = users.filter(X=>X.bloodType=="AB+")
     abnigative = users.filter(X=>X.bloodType=="AB-")
      userLength = users.length
-     anactive = users.filter(x=>x.isActive==false)
     
     var usersRow = ""
     for (i = 0; i < users.length; i++) {
         usersRow +=
             `<tr class="p-2">
-          <td><button class="btn btn-primary text-light">تعديل</button></td>
-                 <td>${users[i].isActive}</td>
+      <td ><button onclick="deleteDonor(${[i]})" class="btn btn-danger">حذف</button> <button onclick="updateDonor(${[i]})" class="btn btn-primary">تعديل</button></td>
         <td>${users[i].bloodType}</td>
         <td><a href="tel:${users[i].phone}"><i class="text-primary"><span>&#128222;</span></i> </a></td>
         <td>${users[i].name}</td>
@@ -101,7 +99,6 @@ function getAlldonors() {
         <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
         </tr>`
         document.getElementById("total").innerHTML=`<h5>اجمـالي المـتبرعـين ${users.length}</h5>`
-                document.getElementById("anactive").innerHTML=`<h5> غير مفعل ${anactive.length}</h5>`
 
 
     }
@@ -232,9 +229,77 @@ function search(term) {
 
         
     }
+}
+function deleted(){
+    alert("نم حذف المتبرع بنجاح")
+}
+function deleteDonor(i) {
+    fetch(`https://donor-tq9e.onrender.com/donors/${users[i]._id}`, {
+        method: 'DELETE',
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.messaga == "sucsess") {
+                deleted()
+            }
+            else {
+                alert(" بــرجاء ادخال البيانات بشكل صحيح ")
+            }
+        });
+}
+var myid 
+function updateDonor(i){
+myid= i
+   document.getElementById("update").style.display = "block";
+
+    document.getElementById("updateName").value = users[i].name
+    document.getElementById("updatePhone").value = users[i].phone
+    document.getElementById("updateBloodType").value = users[i].bloodType
+}
+function cancelUpdate() {
+    document.getElementById("update").style.display = "none";
+}
+function doneUpdate(){
+    alert("تم تعديل بيانات المتبرع بنجاح")
+}
+function clearUpdate() {
+    document.getElementById("updateName").value = ""
+    document.getElementById("updatePhone").value = ""
+    document.getElementById("updateBloodType").value = ""
+}
+function confirmUpdate(){
+    id = myid
+    let upid=users[id]._id
+    var newName = document.getElementById("updateName").value
+    var newPhone = document.getElementById("updatePhone").value 
+    var newBloodType = document.getElementById("updateBloodType").value
+let updated={
+        name : newName,
+        phone : newPhone,
+        bloodType : newBloodType
+}
+fetch(`https://donor-tq9e.onrender.com/donors/${upid}`, {
+    method: 'PUT',
+    body: JSON.stringify(updated),
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
+    .then(response => response.json())
+    .then(data => {
+        if (data.messaga == "sucsess") {
+            doneUpdate()
+            cancelUpdate()
+            clearUpdate()
+        }
+        else {
+            alert(" بــرجاء ادخال البيانات بشكل صحيح ")
+        }
+    });
 
 
 }
-
-
 
