@@ -201,8 +201,7 @@ function search(term) {
 
         if (users[i].name.toLowerCase().indexOf(term) == 0) {
             usersRow += ` <tr>
-            <td><button class="btn btn-primary text-light">تعديل</button></td>
-            <td>${users[i].isActive}</td>
+           <td ><button onclick="deleteDonor(${[i]})" class="btn btn-danger">حذف</button> <button onclick="updateDonor(${[i]})" class="btn btn-primary">تعديل</button></td>
             <td>${users[i].bloodType}</td>
             <td><a href="tel:${users[i].phone}"><i class="text-primary"><span>&#128222;</span></i> </a></td>
             <td>${users[i].name}</td>
@@ -225,9 +224,6 @@ function search(term) {
         <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
         </tr>`
         document.getElementById("total").innerHTML=`<h5>اجمـالي المـتبرعـين ${users.length}</h5>`
-       document.getElementById("anactive").innerHTML=`<h5> غير مفعل ${anactive.length}</h5>`
-
-        
     }
 }
 function deleted(){
