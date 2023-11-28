@@ -25,6 +25,36 @@
  <div class="mt-2 col-lg-4 text-center text-dark bg-warning m-auto" id="anactive"></div>
 
    </div>
+     <div class="updateDonor " id="update" dir="rtl">
+<div class="row">
+    
+        <div class="col-lg-6  text-dark ">
+            <h5 class="text-center pb-4 fs-3">تعديل</h5>
+        <div class="m-auto">
+            <input id="updateName" type="text "class="text form-control text-end w-100 m-auto "  required minlength="3" maxlength="30"><br>
+           <input id="updatePhone" type="tex" class="form-control text-end  w-100 m-auto "  required minlength="11"><br>
+           <select id="updateBloodType" class=" col-lg-6 m-auto textend mb-2 form-select"required maxlength="3">
+            <option> فصيلة الدم</option>
+                <option value="O+" >O+</option>
+                <option value="O-">O-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+        </select><br>
+     
+           </div>
+          
+           <button  class="btn btn-primary w-25 m-2 fs-5 mb-4" onclick="confirmUpdate()">تعديل</button>
+           <button class="btn btn-primary w-25 m-2 fs-5  mb-4" onclick="cancelUpdate()">الغاء</button>
+       
+            
+        </div>
+    
+</div>
+  </div>
   <div class="addDonor " id="add" dir="rtl">
 <div class="row">
     
