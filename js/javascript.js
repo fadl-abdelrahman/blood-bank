@@ -316,6 +316,7 @@ code : delIdlCode
         .then(data => {
             if (data.messaga == "sucsess") {
                 deleted()
+                fetchData()
             getAlldonors() 
             }
             else {
