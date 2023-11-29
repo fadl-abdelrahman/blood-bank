@@ -286,6 +286,8 @@ fetch(`https://donor-tq9e.onrender.com/donors/${upid}`, {
 
 function deleted(){
     alert("نم حذف المتبرع بنجاح")
+    document.getElementById("delete").style.display = "none";
+      document.getElementById("deleteCode").value = ""
 }
 function cancelDelete() {
     document.getElementById("delete").style.display = "none";
