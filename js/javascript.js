@@ -298,9 +298,11 @@ function deleteDonor(i){
 
 }
 function confirmDelete() {
+        delIdlCode = document.getElementById("deleteCode").value
     id=delId
     fetch(`https://donor-tq9e.onrender.com/donors/${users[id]._id}`, {
         method: 'DELETE',
+                body: JSON.stringify(delIdlCode),
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
