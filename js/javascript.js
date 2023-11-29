@@ -299,10 +299,13 @@ function deleteDonor(i){
 }
 function confirmDelete() {
         delIdlCode = document.getElementById("deleteCode").value
+      let deletcode = {
+code : delIdlCode
+    }
     id=delId
     fetch(`https://donor-tq9e.onrender.com/donors/${users[id]._id}`, {
         method: 'DELETE',
-                body: JSON.stringify(delIdlCode),
+                body: JSON.stringify(deletcode),
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
