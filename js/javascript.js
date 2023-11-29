@@ -229,7 +229,7 @@ function search(term) {
     }
 }
 function deleted(){
-    alert("نم حذف المتبرع بنجاح")
+    alert("تم حذف المتبرع بنجاح")
 }
 
 var myid 
@@ -317,7 +317,7 @@ code : delIdlCode
             if (data.messaga == "sucsess") {
                 deleted()
                 document.getElementById("delete").style.display = "none";
-
+getAlldonors() 
             }
             else {
                 alert("ERROR CODE")
