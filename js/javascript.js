@@ -265,6 +265,8 @@ function search(term) {
         }
 
         document.getElementById("tbody").innerHTML = usersRow
+           var test =  setInterval(showNewData,500)  
+    clearInterval(test)
             document.getElementById("filter").innerHTML = ` 
       
         <tr>
@@ -281,6 +283,8 @@ function search(term) {
         </tr>`
         document.getElementById("total").innerHTML=`<h5>اجمـالي المـتبرعـين ${users.length}</h5>`
     }
+       var test =  setInterval(showNewData,500)  
+    clearInterval(test)
 }
 function deleted(){
     alert("تم حذف المتبرع بنجاح")
