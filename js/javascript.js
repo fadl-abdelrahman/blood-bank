@@ -19,6 +19,60 @@ function fetchData() {
 }
 setInterval (fetchData,2000)
 
+function showNewData(){
+    document.getElementById("table").style.visibility = "hidden"
+    fetch('https://donor-tq9e.onrender.com/donors')
+    .then(response => response.json())
+    .then(data => {
+        if (data.messaga == "sucsess") {
+            users = data.users }
+    });
+    oPositive = users.filter(X=>X.bloodType=="O+")
+    onigative = users.filter(X=>X.bloodType=="O-")
+    bPositive = users.filter(X=>X.bloodType=="B+")
+    bnigative = users.filter(X=>X.bloodType=="B-")
+    aPositive = users.filter(X=>X.bloodType=="A+")
+    anigative = users.filter(X=>X.bloodType=="A-")
+    abPositive = users.filter(X=>X.bloodType=="AB+")
+    abnigative = users.filter(X=>X.bloodType=="AB-")
+    userLength = users.length
+    anactive = users.filter(x=>x.isActive==false)
+    var usersRow = ""
+    for (i = 0; i < users.length; i++) {
+        usersRow +=
+            `<tr class="p-2">
+            <td ><button onclick="updateDonor(${[i]})" class="btn btn-primary">تعديل</button></td>
+            <td > <button onclick="deleteDonor(${[i]})" class="btn btn-danger">حذف</button></td>
+            <td>${users[i].bloodType}</td>
+        <td ><a href="tel:${users[i].phone}"><i>&#128222;</i></a></td>
+        <td>${users[i].name}</td>
+      
+     </tr>`
+        document.getElementById("table").style.visibility = "visible"
+        document.getElementById("headers").style.display = "none"        
+        document.getElementById("tbody").innerHTML = usersRow
+
+        document.getElementById("filter").innerHTML = ` 
+      
+        <tr>
+        <td> <div class="bloods "> <h6">(-O) ${onigative.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(+O) ${oPositive.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(-A) ${anigative.length}</h6></div></td>
+        <td> <div class="bloods "> <h6">(+A) ${aPositive.length}</h6></div></td>
+        </tr>
+        <tr>
+        <td> <div class="bloods "> <h6">(-B) ${bnigative.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(+B) ${bPositive.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(-AB) ${abnigative.length}</h6></div></td>
+        <td><div class="bloods "> <h6">(AB+) ${abPositive.length}</h6></div></td>
+        </tr>`
+        document.getElementById("total").innerHTML=`<h5>اجمالي المتطوعين ${users.length}</h5>`
+        document.getElementById("anactive").innerHTML=`<h5> غير مفعل ${anactive.length}</h5>`
+
+    }
+
+}
+
 function adminLogin() {
     let adminCode = document.getElementById("adminCode").value
     let body = {
@@ -273,6 +327,7 @@ fetch(`https://donor-tq9e.onrender.com/donors/${upid}`, {
     .then(response => response.json())
     .then(data => {
         if (data.messaga == "sucsess") {
+          setInterval(showNewData,500)
             doneUpdate()
             cancelUpdate()
             clearUpdate()
@@ -285,9 +340,9 @@ fetch(`https://donor-tq9e.onrender.com/donors/${upid}`, {
 
 
 function deleted(){
-    alert("تم حذف المتبرع بنجاح")
     document.getElementById("delete").style.display = "none";
       document.getElementById("deleteCode").value = ""
+       alert("تم حذف المتبرع بنجاح")
 }
 function cancelDelete() {
     document.getElementById("delete").style.display = "none";
@@ -315,9 +370,8 @@ code : delIdlCode
         .then(response => response.json())
         .then(data => {
             if (data.messaga == "sucsess") {
+              setInterval(showNewData,500)
                 deleted()
-                fetchData()
-            getAlldonors() 
             }
             else {
                 alert("ERROR CODE")
