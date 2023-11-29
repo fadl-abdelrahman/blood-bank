@@ -320,7 +320,7 @@ code : delIdlCode
 
             }
             else {
-                alert(" بــرجاء ادخال البيانات بشكل صحيح ")
+                alert("ERROR CODE")
             }
         });
 }
