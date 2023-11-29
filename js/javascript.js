@@ -231,23 +231,7 @@ function search(term) {
 function deleted(){
     alert("نم حذف المتبرع بنجاح")
 }
-function deleteDonor(i) {
-    fetch(`https://donor-tq9e.onrender.com/donors/${users[i]._id}`, {
-        method: 'DELETE',
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.messaga == "sucsess") {
-                deleted()
-            }
-            else {
-                alert(" بــرجاء ادخال البيانات بشكل صحيح ")
-            }
-        });
-}
+
 var myid 
 function updateDonor(i){
 myid= i
@@ -297,7 +281,40 @@ fetch(`https://donor-tq9e.onrender.com/donors/${upid}`, {
             alert(" بــرجاء ادخال البيانات بشكل صحيح ")
         }
     });
+}
 
+
+    alert("نم حذف المتبرع بنجاح")
+}
+function cancelDelete() {
+    document.getElementById("delete").style.display = "none";
+}
+var delId
+function deleteDonor(i){
+    delId=i
+    document.getElementById("delete").style.display = "block";
+    document.getElementById("delText").innerHTML=` سيتم حذف المتبرع ${users[i].name} من قائمة المتبرعين نهائيا`
 
 }
+function confirmDelete() {
+    id=delId
+    fetch(`https://donor-tq9e.onrender.com/donors/${users[id]._id}`, {
+        method: 'DELETE',
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.messaga == "sucsess") {
+                deleted()
+                document.getElementById("delete").style.display = "none";
+
+            }
+            else {
+                alert(" بــرجاء ادخال البيانات بشكل صحيح ")
+            }
+        });
+}
+
 
